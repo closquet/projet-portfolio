@@ -1,0 +1,21 @@
+.main-nav__link{
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  hyphens: none;
+  transition: 0.3s;
+  padding: 5px;
+  border-bottom: 3px solid $color7;
+
+  &:hover, &:focus{
+    cursor: pointer;
+    color: $color5;
+    border-color: $color5;
+    border-bottom: 3px solid $color5;
+  }
+
+  &--current-page{
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+  }
+}

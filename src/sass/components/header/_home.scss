@@ -1,0 +1,17 @@
+.home{
+  background: url('../images/deco/banner-1920.jpg') 50% 100%/cover no-repeat;
+  height: 27.3em;
+  position: relative;
+  margin-top: 3.8em;
+
+  @media (max-width: 1366px){
+    background-image: url('../images/deco/banner-1366.jpg');
+  }
+  @media (max-width: 1024px){
+    background-image: url('../images/deco/banner-1024.jpg');
+  }
+  @media (max-width: 400px){
+    background-image: url('../images/deco/banner-400.jpg');
+  }
+
+}

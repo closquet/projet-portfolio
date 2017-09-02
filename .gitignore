@@ -1,0 +1,5 @@
+node_modules
+assets
+*.html
+.idea
+src/images/tmp
