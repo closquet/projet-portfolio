@@ -1,0 +1,12 @@
+.single__content__thumbnail-container{
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.3em;
+  margin-right: 3em;
+
+  @media (max-width: 900px) {
+    margin-right: 0;
+  }
+}

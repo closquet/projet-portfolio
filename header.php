@@ -1,4 +1,4 @@
-<?php $currenturl = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
+<?php $currenturl = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];?>
 <!DOCTYPE html>
 <html lang="fr-BE" class="no-js">
     <head>
@@ -24,10 +24,18 @@
                     </h1>
                     <nav aria-labelledby="main-nav__title" role="navigation" class="main-nav">
                         <h2 id="main-nav__title" role="heading" aria-level="2" class="visually-hidden">Menu Principal</h2>
+                        <input type="checkbox" id="burger-menu" class="burger-menu-input">
+                        <label class="burger-menu-label" for="burger-menu">
+                            <span class="fa fa-bars burger-menu-open" aria-hidden="true"></span>
+                            <span class="fa fa-times burger-menu-close" aria-hidden="true"></span>
+                        </label>
                         <ul class="main-nav__links-list">
+                            <li class="main-nav__item">
+                                <a href="/" class="main-nav__link<?php echo ($_SERVER['REQUEST_URI'] == '/') ? ' main-nav__link--current-page' : '' ;?>">Accueil</a>
+                            </li>
 				            <?php foreach (ec_get_nav_items('header') as $item): ?>
                                 <li class="main-nav__item<?= $item->children ? ' main-nav__item--parent' : '' ?>">
-                                    <a href="<?php echo $item->link;?>" class="main-nav__link<?php echo ($currenturl == $item->link . '/') ? ' main-nav__link--current-page' : '' ;?>"><?php echo $item->label;?></a>
+                                    <a href="<?php echo $item->link;?>" class="main-nav__link<?php echo ($currenturl == $item->link) ? ' main-nav__link--current-page' : '' ;?>"><?php echo $item->label;?></a>
 						            <?php if($item->children):?>
                                         <ul class="main-nav__sub-links-list">
 								            <?php foreach($item->children as $sub):?>
@@ -42,13 +50,6 @@
                         </ul>
                     </nav>
                 </div>
-	            <?php if ($_SERVER['REQUEST_URI'] != '/'):?>
-                    <div class="arian ">
-                        <div class="wrap">
-				            <?php ec_fildarian(); ?>
-                        </div>
-                    </div>
-	            <?php endif; ?>
             </div>
             <?php if ($_SERVER['REQUEST_URI'] == '/'):?>
                 <div class="wrap">
@@ -56,7 +57,7 @@
                         <span class="slogan__parts slogan__part1">Vous souhaitez exister sur le web?</span>
                         <span class="slogan__parts slogan__part2">Créons ensemble un site web qui correspond à vos besoins</span>
                     </p>
-                    <a class="dons-btn" href="/dons">Me contacter</a>
+                    <a title="Envoyer un email à closquet.eric@live.be" class="contact-btn" href="mailto:closquet.eric@live.be">Me contacter</a>
                 </div><!--wrap banner-wrap-->
                 <span id="down-target"></span>
             <?php endif;?>

@@ -2,4 +2,23 @@
   margin: 0;
   padding: 1.3em 0 0.7em;
   background-color: $color5;
+
+  li{
+    display: inline;
+  }
+
+  a{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+
+    img{
+      transition: .4s cubic-bezier(0.16, 1.77, 0.7, 1.68);
+    }
+
+    &:hover, &:focus{
+      img{
+        transform: scale(1.2);
+      }
+    }
+  }
 }

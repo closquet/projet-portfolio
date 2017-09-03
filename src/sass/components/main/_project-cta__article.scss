@@ -1,17 +1,22 @@
 .project-cta__article{
-  width: 392px;
+  width: 100%;
+  max-width: 400px;
   position: relative;
   margin-bottom: 1.8em;
-  margin-right: 6.2222em;
+  margin-right: 5.4em;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid $color1;
+  background-color: #000;
 
 
   &:nth-child(3n){
     margin-right: 0;
   }
 
-  @media (max-width:1450px) {
+  @media (max-width:1460px) {
     &:nth-child(3n) {
-      margin-right: 6.2222em;
+      margin-right: 5.4em;
     }
   }
 

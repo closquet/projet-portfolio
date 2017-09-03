@@ -1,32 +1,28 @@
 
 
 <?php get_header(); ?>
-		<section class="content__articles">
-            <h2 class="page-title">Single</h2>
-						
-			<?php if(have_posts()): while(have_posts()): the_post();?>
-				<article class="post">
-					<h3 class="post__title"><?php the_title();?></h3>
-					<figure class="post__thumb">
-						<?php if ( has_post_thumbnail() ) {
-							the_post_thumbnail();
-						}?>
-					</figure>
-					<p class="post__date">Publié le <time class="post__time" datetime="<?php the_time('c');?>"><?php the_time('l j F Y');?></time>.</p>
-					<div class="post__excerpt">
-						<?php the_content();?>
-                        <div>
-							<p>Races&nbsp;: <?php ec_the_terms(', ', '<span class="post__term post__greed--:type">', '</span>', 'project_places'); ?></p>
+		<article class="wrap bloc single">
+            
+			<?php if( have_posts() ): while( have_posts() ): the_post();?>
+                <h2 id="project-cta__title" role="heading" aria-level="2" class="page-title project-cta__title">
+					<?php the_title(); ?>
+                </h2>
+                <div class="single__content">
+                    <div class="single__content__thumbnail-container">
+	                    <?php the_post_thumbnail('my_thumbnail', ['class' => 'single__content__thumbnail']); ?>
+                        <div class="single__content__online-links">
+                            <a class="single__content__online-link dark-btn btn" href="<?php the_field('github'); ?>">Voir le projet sur Github</a>
+                            <a class="single__content__online-link dark-btn btn" href="<?php the_field('online'); ?>">Visiter le site en ligne</a>
                         </div>
-                        <div>
-                            <p>
-                                Âge&nbsp;: <?php the_field( 'age');?> an(s)
-                            </p>
-                        </div>
-					</div>
-				</article>
+                    </div>
+                    <div class="single__content__text">
+	                    <?php the_content(); ?>
+                    </div>
+                    
+                    
+                </div>
 			<?php endwhile; else: ?>
 				<p class="content__empty">Il n'y a pas d'articles à afficher.</p>
 			<?php endif;?>
-		</section>
+		</article>
 <?php get_footer(); ?>

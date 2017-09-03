@@ -4,4 +4,8 @@
   transition: 0.4s;
   align-items: center;
   height: 3.8em;
+
+  @media (max-width: 700px){
+    flex-direction: row-reverse;
+  }
 }

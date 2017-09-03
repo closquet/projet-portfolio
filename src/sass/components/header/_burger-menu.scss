@@ -6,18 +6,16 @@
   font-size: 1.7em;
   z-index: 2;
   position: absolute;
-  right: 6.66em;
-  padding-right: 0.3em;
-  top: -6.51em;
-  padding-left: 0.35em;
-  background-color: rgba(255,255,255,1);
-  color: #000000;
+  right: 4.31em;
+  padding: 0.384em 0.3em 0.384em 0.35em;
+  top: 0;
+  color: #ffffff;
   width: 1.5em;
   cursor: pointer;
   display: none;
   transition: right .7s;
 
-  @media (max-width: 470px){
+  @media (max-width: 700px){
     display: inline;
   }
 
@@ -33,8 +31,6 @@
 
   & ~ label{
     right: -0.6em;
-    background-color: transparent;
-    color: #ffffff;
 
     & .burger-menu-open{
       display: none;

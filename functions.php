@@ -7,9 +7,31 @@ if ( function_exists( 'add_theme_support' ) ) {
 	add_theme_support( 'post-thumbnails' );
 	// additional image sizes
 	add_image_size( 'my_thumbnail', 400, 225, true );
-	add_image_size( 'title_image', 1919, 348, true );
 }
 
+/**
+ * Retourne l'age en fonction de la date de naissance
+ *
+ * @param  date $date_naissance au format AAAA-MM-JJ
+ * @return int  $age
+ */
+function calcule_age($date_naissance)
+{
+	$date_today=explode("-",date ('Y-n-j'));
+	$annee_today=$date_today[0];
+	$mois_today=$date_today[1];
+	$jour_today=$date_today[2];
+	
+	$date_naissance=explode("-", $date_naissance);
+	$annee_naissance=$date_naissance[0];
+	$mois_naissance=$date_naissance[1];
+	$jour_naissance=$date_naissance[2];
+	
+	$age =  $annee_today - $annee_naissance;
+	if ($mois_today < $mois_naissance) $age=$age-1;
+	if ( ($mois_today == $mois_naissance) && ($jour_today < $jour_naissance) )  $age=$age-1;
+	return $age;
+}
 
 /*
  * Register navigation menu

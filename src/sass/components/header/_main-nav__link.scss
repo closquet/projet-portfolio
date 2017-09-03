@@ -18,4 +18,26 @@
     border-top: 3px solid white;
     border-bottom: 3px solid white;
   }
+
+  @media (max-width: 700px){
+    text-decoration: none;
+    border: none;
+
+    &:hover, &:focus{
+      color: #ffffff;
+      border: none;
+    }
+
+    &:hover, &:focus{
+      text-decoration: none;
+    }
+
+    &--current-page{
+      &:after{
+        font-family: FontAwesome;
+        content: ' \f060';
+        margin-left: .3em;
+      }
+    }
+  }
 }
