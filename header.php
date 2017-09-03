@@ -56,10 +56,9 @@
                     <p class="slogan">
                         <span class="slogan__parts slogan__part1">Vous souhaitez exister sur le web?</span>
                         <span class="slogan__parts slogan__part2">Créons ensemble un site web qui correspond à vos besoins</span>
+                        <a title="Envoyer un email à closquet.eric@live.be" class="contact-btn" href="mailto:closquet.eria tive.be">Me contacter</a>
                     </p>
-                    <a title="Envoyer un email à closquet.eric@live.be" class="contact-btn" href="mailto:closquet.eric@live.be">Me contacter</a>
                 </div><!--wrap banner-wrap-->
-                <span id="down-target"></span>
             <?php endif;?>
         </header>
         <main role="main" id="main" class="content">
